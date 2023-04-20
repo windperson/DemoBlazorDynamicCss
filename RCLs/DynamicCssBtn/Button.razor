@@ -1,0 +1,13 @@
+﻿<button style="--btn-width:@Attributes.Width;
+               --btn-height:@Attributes.Height;
+               --btn-fontSize:@Attributes.FontSize;
+               --btn-foreground:@Attributes.ForegroundColor;
+               --btn-background:@Attributes.BackgroundColor;">
+    @Attributes.Content
+</button>
+
+@code {
+    [Parameter]
+    public ButtonStyle Attributes { get; set; } = null!;
+
+}

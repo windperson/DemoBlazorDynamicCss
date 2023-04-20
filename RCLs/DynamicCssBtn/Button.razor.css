@@ -1,0 +1,7 @@
+﻿button {
+    width: var(--btn-width);
+    height: var(--btn-height);
+    font-size: var(--btn-fontSize);
+    color: var(--btn-foreground);
+    background-color: var(--btn-background);
+}
