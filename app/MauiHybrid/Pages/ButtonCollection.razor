@@ -2,13 +2,13 @@
 @using DynamicCssBtn
 
 Dynamic CSS Button Collection on Blazor MAUI:
-<br/>
-<br/>
+<br />
+<br />
 <div>
-    <Button Attributes=@ListOfButtonStyle[0]></Button>
-    <Button Attributes=@ListOfButtonStyle[1]></Button>
-    <Button Attributes=@ListOfButtonStyle[2]></Button>
-    <Button Attributes=@ListOfButtonStyle[3]></Button>
+    <Button Attributes="@ListOfButtonStyle[0]" ComponentClicked="() => {BtnClick(1);}"></Button>
+    <Button Attributes="@ListOfButtonStyle[1]" ComponentClicked="() => {BtnClick(2);}"></Button>
+    <Button Attributes="@ListOfButtonStyle[2]" ComponentClicked="() => {BtnClick(3);}"></Button>
+    <Button Attributes="@ListOfButtonStyle[3]" ComponentClicked="() => {BtnClick(4);}"></Button>
 </div>
 
 
@@ -57,4 +57,10 @@ Dynamic CSS Button Collection on Blazor MAUI:
             }
         };
     }
+
+    private void BtnClick(int i)
+    {
+        // do Event handler job here
+    }
+
 }

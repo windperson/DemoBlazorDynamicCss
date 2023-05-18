@@ -2,35 +2,15 @@
 {
     public class ButtonStyle
     {
-        public string Height
-        {
-            get;
-            set;
-        }
-        public string Width
-        {
-            get;
-            set;
-        }
-        public string FontSize
-        {
-            get;
-            set;
-        }
-        public string ForegroundColor
-        {
-            get;
-            set;
-        }
-        public string BackgroundColor
-        {
-            get;
-            set;
-        }
-        public string Content
-        {
-            get;
-            set;
-        }
+        public string Height { get; set; } = string.Empty;
+
+        public string Width { get; set; } = string.Empty;
+
+        public string FontSize { get; set; } = string.Empty;
+
+        public string ForegroundColor { get; set; } = string.Empty;
+        public string BackgroundColor { get; set; } = string.Empty;
+
+        public string Content { get; set; } = string.Empty;
     }
 }

@@ -2,7 +2,8 @@
                --btn-height:@Attributes.Height;
                --btn-fontSize:@Attributes.FontSize;
                --btn-foreground:@Attributes.ForegroundColor;
-               --btn-background:@Attributes.BackgroundColor;">
+               --btn-background:@Attributes.BackgroundColor;"
+        @onclick="MouseClick">
     @Attributes.Content
 </button>
 
@@ -10,4 +11,11 @@
     [Parameter]
     public ButtonStyle Attributes { get; set; } = null!;
 
+    [Parameter]
+    public EventCallback ComponentClicked { get; set; }
+
+    private async Task MouseClick(MouseEventArgs e)
+    {
+        await ComponentClicked.InvokeAsync();
+    }
 }
