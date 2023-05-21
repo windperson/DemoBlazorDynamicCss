@@ -10,7 +10,5 @@
 
         public string ForegroundColor { get; set; } = string.Empty;
         public string BackgroundColor { get; set; } = string.Empty;
-
-        public string Content { get; set; } = string.Empty;
     }
 }

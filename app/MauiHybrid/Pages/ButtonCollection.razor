@@ -5,10 +5,10 @@ Dynamic CSS Button Collection on Blazor MAUI:
 <br />
 <br />
 <div>
-    <Button Attributes="@ListOfButtonStyle[0]" ComponentClicked="() => {BtnClick(1);}"></Button>
-    <Button Attributes="@ListOfButtonStyle[1]" ComponentClicked="() => {BtnClick(2);}"></Button>
-    <Button Attributes="@ListOfButtonStyle[2]" ComponentClicked="() => {BtnClick(3);}"></Button>
-    <Button Attributes="@ListOfButtonStyle[3]" ComponentClicked="() => {BtnClick(4);}"></Button>
+    <Button CssAttributes="@ListOfButtonStyle[0]" Content="OK" ComponentClicked="BtnClick"></Button>
+    <Button CssAttributes="@ListOfButtonStyle[1]" Content="Submit"  ComponentClicked="BtnClick"></Button>
+    <Button CssAttributes="@ListOfButtonStyle[2]" Content="Cancel"  ComponentClicked="BtnClick"></Button>
+    <Button CssAttributes="@ListOfButtonStyle[3]" Content="Click Me"  ComponentClicked="BtnClick"></Button>
 </div>
 
 
@@ -21,7 +21,6 @@ Dynamic CSS Button Collection on Blazor MAUI:
         {
             new ButtonStyle()
             {
-                Content = "Ok",
                 FontSize = "12px",
                 Height = "20px",
                 Width = "50px",
@@ -30,7 +29,6 @@ Dynamic CSS Button Collection on Blazor MAUI:
             },
             new ButtonStyle()
             {
-                Content = "Submit",
                 FontSize = "15px",
                 Height = "25px",
                 Width = "100px",
@@ -39,7 +37,6 @@ Dynamic CSS Button Collection on Blazor MAUI:
             },
             new ButtonStyle()
             {
-                Content = "Cancel",
                 FontSize = "18px",
                 Height = "30px",
                 Width = "150px",
@@ -48,7 +45,6 @@ Dynamic CSS Button Collection on Blazor MAUI:
             },
             new ButtonStyle()
             {
-                Content = "Click Me",
                 FontSize = "21px",
                 Height = "35px",
                 Width = "200px",
@@ -58,7 +54,7 @@ Dynamic CSS Button Collection on Blazor MAUI:
         };
     }
 
-    private void BtnClick(int i)
+    private void BtnClick(MouseEventArgs e)
     {
         // do Event handler job here
     }

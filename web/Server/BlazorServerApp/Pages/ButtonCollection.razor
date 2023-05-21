@@ -2,13 +2,14 @@
 @using DynamicCssBtn
 
 Dynamic CSS Button Collection on Blazor Server:
-<br/>
-<br/>
+<br />
+<br />
 <div>
-    <Button Attributes=@ListOfButtonStyle[0]></Button>
-    <Button Attributes=@ListOfButtonStyle[1]></Button>
-    <Button Attributes=@ListOfButtonStyle[2]></Button>
-    <Button Attributes=@ListOfButtonStyle[3]></Button>
+    <Button CssAttributes="@ListOfButtonStyle[0]" Content="OK" ComponentClicked="BtnClick"></Button>
+    <Button CssAttributes="@ListOfButtonStyle[1]" Content="Submit" ComponentClicked="BtnClick"></Button>
+    <Button CssAttributes="@ListOfButtonStyle[2]" Content="Cancel" ComponentClicked="BtnClick"></Button>
+    <Button CssAttributes="@ListOfButtonStyle[3]" Content="Click Me" ComponentClicked="BtnClick"></Button>
+
 </div>
 
 
@@ -21,7 +22,6 @@ Dynamic CSS Button Collection on Blazor Server:
         {
             new ButtonStyle()
             {
-                Content = "Ok",
                 FontSize = "12px",
                 Height = "20px",
                 Width = "50px",
@@ -30,7 +30,6 @@ Dynamic CSS Button Collection on Blazor Server:
             },
             new ButtonStyle()
             {
-                Content = "Submit",
                 FontSize = "15px",
                 Height = "25px",
                 Width = "100px",
@@ -39,7 +38,6 @@ Dynamic CSS Button Collection on Blazor Server:
             },
             new ButtonStyle()
             {
-                Content = "Cancel",
                 FontSize = "18px",
                 Height = "30px",
                 Width = "150px",
@@ -48,7 +46,6 @@ Dynamic CSS Button Collection on Blazor Server:
             },
             new ButtonStyle()
             {
-                Content = "Click Me",
                 FontSize = "21px",
                 Height = "35px",
                 Width = "200px",
@@ -57,4 +54,10 @@ Dynamic CSS Button Collection on Blazor Server:
             }
         };
     }
+
+    private void BtnClick(MouseEventArgs obj)
+    {
+        // do Event handler job here
+    }
+
 }

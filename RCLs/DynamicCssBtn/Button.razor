@@ -1,21 +1,27 @@
-﻿<button style="--btn-width:@Attributes.Width;
-               --btn-height:@Attributes.Height;
-               --btn-fontSize:@Attributes.FontSize;
-               --btn-foreground:@Attributes.ForegroundColor;
-               --btn-background:@Attributes.BackgroundColor;"
+﻿@using Microsoft.Extensions.Logging
+@inject ILogger<Button> Logger
+<button style="--btn-width:@CssAttributes.Width;
+               --btn-height:@CssAttributes.Height;
+               --btn-fontSize:@CssAttributes.FontSize;
+               --btn-foreground:@CssAttributes.ForegroundColor;
+               --btn-background:@CssAttributes.BackgroundColor;"
         @onclick="MouseClick">
-    @Attributes.Content
+    @Content
 </button>
 
 @code {
     [Parameter]
-    public ButtonStyle Attributes { get; set; } = null!;
+    public ButtonStyle CssAttributes { get; set; } = null!;
 
     [Parameter]
-    public EventCallback ComponentClicked { get; set; }
+    public string? Content { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> ComponentClicked { get; set; }
 
     private async Task MouseClick(MouseEventArgs e)
     {
-        await ComponentClicked.InvokeAsync();
+        Logger.LogInformation($"The {Content} button onclick event triggered");
+        await ComponentClicked.InvokeAsync(e);
     }
 }
